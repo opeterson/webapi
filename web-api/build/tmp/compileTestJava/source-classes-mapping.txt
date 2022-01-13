@@ -1,2 +1,0 @@
-ca/owenpeterson/web/api/LibraryTest.java
- ca.owenpeterson.web.api.LibraryTest
