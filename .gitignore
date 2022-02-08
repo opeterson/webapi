@@ -1,2 +1,9 @@
 /.gradle/
+.settings
+
+#ignores for web-api
+/web-api/.gradle
 /web-api/build/
+/web-api/bin/
+/web-api/.classpath
+

@@ -9,12 +9,19 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id 'org.openapi.generator' version '5.4.0'
 }
 
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
 }
+
+
+ openApiValidate {
+	    inputSpec = projectDir.toString() + '/src/main/resources/META-INF/api/webapi-api.yml'.toString()
+	    recommend = true
+	}
 
 dependencies {
     // Use JUnit test framework.
@@ -25,4 +32,8 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:29.0-jre'
+    
+    // https://mvnrepository.com/artifact/org.openapitools/openapi-generator-gradle-plugin
+	implementation group: 'org.openapitools', name: 'openapi-generator-gradle-plugin', version: '5.4.0'
+    
 }
