@@ -107,7 +107,7 @@ openApiGenerate {
     generatorName = 'java'
     library = 'resttemplate'
     inputSpec = projectDir.toString() + '/src/main/resources/webapi-api.yml'.toString()
-    outputDir = projectDir.toString() //+ '/generated/web-api-client'.toString()
+    outputDir = projectDir.toString()
     apiPackage = 'ca.owenpeterson.web.api'
     invokerPackage = 'ca.owenpeterson.web.api.invoker'
     modelPackage = 'ca.owenpeterson.web.api.model'
