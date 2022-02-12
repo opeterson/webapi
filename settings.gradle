@@ -9,3 +9,4 @@
 
 rootProject.name = 'web-project'
 include('web-api')
+include('web-api-client')

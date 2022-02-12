@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: owen.a.peterson@gmail.com
+  description: This is the server for my personal website.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://owenpeterson.ca/terms/
+  title: owenpeterson.ca
+  version: 1.0.0
+servers:
+- description: Development server
+  url: https://localhost:8080/v1
+paths:
+  /webapi/status:
+    get:
+      description: Gets the current status of the server.
+      operationId: getServerStatus
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiServerStatusResponse'
+          description: the status of the server.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiDefaultError'
+          description: Default error payload
+      x-accepts: application/json
+components:
+  schemas:
+    ApiServerStatusResponse:
+      example:
+        db_status: db_status
+      properties:
+        db_status:
+          type: string
+      type: object
+    ApiDefaultError:
+      properties:
+        error_message:
+          type: string
+      type: object
+
