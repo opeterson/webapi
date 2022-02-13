@@ -98,19 +98,19 @@ if(hasProperty('target') && target == 'android') {
     }
 }
 
- openApiValidate {
-	    inputSpec = projectDir.toString() + '/src/main/resources/webapi-api.yml'.toString()
+openApiValidate {
+	    inputSpec = projectDir.toString() + '/src/main/resources/web-api.yml'.toString()
 	    recommend = true
 	}
 
 openApiGenerate {
     generatorName = 'java'
     library = 'resttemplate'
-    inputSpec = projectDir.toString() + '/src/main/resources/webapi-api.yml'.toString()
+    inputSpec = projectDir.toString() + '/src/main/resources/web-api.yml'.toString()
     outputDir = projectDir.toString()
-    apiPackage = 'ca.owenpeterson.web.api'
-    invokerPackage = 'ca.owenpeterson.web.api.invoker'
-    modelPackage = 'ca.owenpeterson.web.api.model'
+    apiPackage = 'ca.owenpeterson.web.api.client.api'
+    invokerPackage = 'ca.owenpeterson.web.api.client.invoker'
+    modelPackage = 'ca.owenpeterson.web.api.client.model'
     configOptions = [
         dateLibrary: 'java8',
         serializationLibrary: 'jackson',

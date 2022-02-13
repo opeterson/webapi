@@ -1,9 +1,9 @@
-package ca.owenpeterson.web.api;
+package ca.owenpeterson.web.api.client.api;
 
-import ca.owenpeterson.web.api.invoker.ApiClient;
+import ca.owenpeterson.web.api.client.invoker.ApiClient;
 
-import ca.owenpeterson.web.api.model.ApiDefaultError;
-import ca.owenpeterson.web.api.model.ApiServerStatusResponse;
+import ca.owenpeterson.web.api.client.model.ApiDefaultError;
+import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,8 +26,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-12T12:12:34.126392-06:00[America/Winnipeg]")
-@Component("ca.owenpeterson.web.api.DefaultApi")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-13T13:50:44.533356500-06:00[America/Chicago]")
+@Component("ca.owenpeterson.web.api.client.api.DefaultApi")
 public class DefaultApi {
     private ApiClient apiClient;
 
@@ -87,6 +87,6 @@ public class DefaultApi {
         String[] authNames = new String[] {  };
 
         ParameterizedTypeReference<ApiServerStatusResponse> returnType = new ParameterizedTypeReference<ApiServerStatusResponse>() {};
-        return apiClient.invokeAPI("/webapi/status", HttpMethod.GET, Collections.<String, Object>emptyMap(), queryParams, postBody, headerParams, cookieParams, formParams, localVarAccept, localVarContentType, authNames, returnType);
+        return apiClient.invokeAPI("/web/status", HttpMethod.GET, Collections.<String, Object>emptyMap(), queryParams, postBody, headerParams, cookieParams, formParams, localVarAccept, localVarContentType, authNames, returnType);
     }
 }

@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost:8080/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getServerStatus**](DefaultApi.md#getServerStatus) | **GET** /webapi/status | 
+[**getServerStatus**](DefaultApi.md#getServerStatus) | **GET** /web/status | 
 
 
 
@@ -20,11 +20,11 @@ Gets the current status of the server.
 
 ```java
 // Import classes:
-import ca.owenpeterson.web.api.invoker.ApiClient;
-import ca.owenpeterson.web.api.invoker.ApiException;
-import ca.owenpeterson.web.api.invoker.Configuration;
-import ca.owenpeterson.web.api.invoker.models.*;
-import ca.owenpeterson.web.api.DefaultApi;
+import ca.owenpeterson.web.api.client.invoker.ApiClient;
+import ca.owenpeterson.web.api.client.invoker.ApiException;
+import ca.owenpeterson.web.api.client.invoker.Configuration;
+import ca.owenpeterson.web.api.client.invoker.models.*;
+import ca.owenpeterson.web.api.client.api.DefaultApi;
 
 public class Example {
     public static void main(String[] args) {

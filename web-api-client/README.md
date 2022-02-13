@@ -4,7 +4,7 @@ owenpeterson.ca
 
 - API version: 1.0.0
 
-- Build date: 2022-02-12T12:12:34.126392-06:00[America/Winnipeg]
+- Build date: 2022-02-13T13:50:44.533356500-06:00[America/Chicago]
 
 This is the server for my personal website.
 
@@ -81,10 +81,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import ca.owenpeterson.web.api.invoker.*;
-import ca.owenpeterson.web.api.invoker.auth.*;
-import ca.owenpeterson.web.api.model.*;
-import ca.owenpeterson.web.api.DefaultApi;
+import ca.owenpeterson.web.api.client.invoker.*;
+import ca.owenpeterson.web.api.client.invoker.auth.*;
+import ca.owenpeterson.web.api.client.model.*;
+import ca.owenpeterson.web.api.client.api.DefaultApi;
 
 public class DefaultApiExample {
 
@@ -114,7 +114,7 @@ All URIs are relative to *https://localhost:8080/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**getServerStatus**](docs/DefaultApi.md#getServerStatus) | **GET** /webapi/status | 
+*DefaultApi* | [**getServerStatus**](docs/DefaultApi.md#getServerStatus) | **GET** /web/status | 
 
 
 ## Documentation for Models

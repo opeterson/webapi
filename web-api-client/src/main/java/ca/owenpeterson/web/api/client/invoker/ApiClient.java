@@ -1,4 +1,4 @@
-package ca.owenpeterson.web.api.invoker;
+package ca.owenpeterson.web.api.client.invoker;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -55,10 +55,10 @@ import java.util.TimeZone;
 import java.time.OffsetDateTime;
 
 
-import ca.owenpeterson.web.api.invoker.auth.Authentication;
+import ca.owenpeterson.web.api.client.invoker.auth.Authentication;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-12T12:12:34.126392-06:00[America/Winnipeg]")
-@Component("ca.owenpeterson.web.api.invoker.ApiClient")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-13T13:50:44.533356500-06:00[America/Chicago]")
+@Component("ca.owenpeterson.web.api.client.invoker.ApiClient")
 public class ApiClient extends JavaTimeFormatter {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

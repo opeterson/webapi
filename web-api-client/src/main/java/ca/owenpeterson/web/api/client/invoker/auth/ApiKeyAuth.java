@@ -1,9 +1,9 @@
-package ca.owenpeterson.web.api.invoker.auth;
+package ca.owenpeterson.web.api.client.invoker.auth;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-12T12:12:34.126392-06:00[America/Winnipeg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-13T13:50:44.533356500-06:00[America/Chicago]")
 public class ApiKeyAuth implements Authentication {
     private final String location;
     private final String paramName;

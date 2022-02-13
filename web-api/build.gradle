@@ -9,11 +9,33 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id "org.openapi.generator" version "5.3.0"
 }
 
 repositories {
     // Use JCenter for resolving dependencies.
     jcenter()
+}
+
+openApiValidate {
+	    inputSpec = rootDir.toString() + '/web-api-client/src/main/resources/web-api.yml'.toString()
+	    recommend = true
+	}
+	
+openApiGenerate {
+    generatorName = 'spring'
+    library = 'spring-mvc'
+    inputSpec = rootDir.toString() + '/web-api-client/src/main/resources/web-api.yml'.toString()
+    outputDir = projectDir.toString() + '/build/generated/web-api-server'.toString()
+    apiPackage = 'ca.owenpeterson.web.api'
+    invokerPackage = 'ca.owenpeterson.web.api.invoker'
+    modelPackage = 'ca.owenpeterson.web.api.model'
+    configOptions = [
+        dateLibrary: 'java8',
+        serializationLibrary: 'jackson',
+        generateModelTests: 'false',
+        generateApiTests: 'false'
+    ]
 }
 
 dependencies {

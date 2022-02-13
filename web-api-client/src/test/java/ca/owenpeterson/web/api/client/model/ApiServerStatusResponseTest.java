@@ -11,7 +11,7 @@
  */
 
 
-package ca.owenpeterson.web.api.model;
+package ca.owenpeterson.web.api.client.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,25 +26,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for ApiDefaultError
+ * Model tests for ApiServerStatusResponse
  */
-public class ApiDefaultErrorTest {
-    private final ApiDefaultError model = new ApiDefaultError();
+public class ApiServerStatusResponseTest {
+    private final ApiServerStatusResponse model = new ApiServerStatusResponse();
 
     /**
-     * Model tests for ApiDefaultError
+     * Model tests for ApiServerStatusResponse
      */
     @Test
-    public void testApiDefaultError() {
-        // TODO: test ApiDefaultError
+    public void testApiServerStatusResponse() {
+        // TODO: test ApiServerStatusResponse
     }
 
     /**
-     * Test the property 'errorMessage'
+     * Test the property 'dbStatus'
      */
     @Test
-    public void errorMessageTest() {
-        // TODO: test errorMessage
+    public void dbStatusTest() {
+        // TODO: test dbStatus
     }
 
 }

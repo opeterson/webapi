@@ -1,4 +1,4 @@
-package ca.owenpeterson.web.api.invoker.auth;
+package ca.owenpeterson.web.api.client.invoker.auth;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;

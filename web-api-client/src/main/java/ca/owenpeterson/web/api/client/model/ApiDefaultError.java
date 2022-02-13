@@ -11,7 +11,7 @@
  */
 
 
-package ca.owenpeterson.web.api.model;
+package ca.owenpeterson.web.api.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -26,44 +26,44 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * ApiServerStatusResponse
+ * ApiDefaultError
  */
 @JsonPropertyOrder({
-  ApiServerStatusResponse.JSON_PROPERTY_DB_STATUS
+  ApiDefaultError.JSON_PROPERTY_ERROR_MESSAGE
 })
-@JsonTypeName("ApiServerStatusResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-12T12:12:34.126392-06:00[America/Winnipeg]")
-public class ApiServerStatusResponse {
-  public static final String JSON_PROPERTY_DB_STATUS = "db_status";
-  private String dbStatus;
+@JsonTypeName("ApiDefaultError")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-13T13:50:44.533356500-06:00[America/Chicago]")
+public class ApiDefaultError {
+  public static final String JSON_PROPERTY_ERROR_MESSAGE = "error_message";
+  private String errorMessage;
 
-  public ApiServerStatusResponse() { 
+  public ApiDefaultError() { 
   }
 
-  public ApiServerStatusResponse dbStatus(String dbStatus) {
+  public ApiDefaultError errorMessage(String errorMessage) {
     
-    this.dbStatus = dbStatus;
+    this.errorMessage = errorMessage;
     return this;
   }
 
    /**
-   * Get dbStatus
-   * @return dbStatus
+   * Get errorMessage
+   * @return errorMessage
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DB_STATUS)
+  @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDbStatus() {
-    return dbStatus;
+  public String getErrorMessage() {
+    return errorMessage;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DB_STATUS)
+  @JsonProperty(JSON_PROPERTY_ERROR_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDbStatus(String dbStatus) {
-    this.dbStatus = dbStatus;
+  public void setErrorMessage(String errorMessage) {
+    this.errorMessage = errorMessage;
   }
 
 
@@ -75,20 +75,20 @@ public class ApiServerStatusResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiServerStatusResponse apiServerStatusResponse = (ApiServerStatusResponse) o;
-    return Objects.equals(this.dbStatus, apiServerStatusResponse.dbStatus);
+    ApiDefaultError apiDefaultError = (ApiDefaultError) o;
+    return Objects.equals(this.errorMessage, apiDefaultError.errorMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dbStatus);
+    return Objects.hash(errorMessage);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiServerStatusResponse {\n");
-    sb.append("    dbStatus: ").append(toIndentedString(dbStatus)).append("\n");
+    sb.append("class ApiDefaultError {\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

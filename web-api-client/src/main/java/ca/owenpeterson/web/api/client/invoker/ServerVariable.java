@@ -1,4 +1,4 @@
-package ca.owenpeterson.web.api.invoker;
+package ca.owenpeterson.web.api.client.invoker;
 
 import java.util.HashSet;
 

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package ca.owenpeterson.web.api.invoker;
+package ca.owenpeterson.web.api.client.invoker;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 

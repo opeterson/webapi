@@ -11,10 +11,10 @@
  */
 
 
-package ca.owenpeterson.web.api;
+package ca.owenpeterson.web.api.client.api;
 
-import ca.owenpeterson.web.api.model.ApiDefaultError;
-import ca.owenpeterson.web.api.model.ApiServerStatusResponse;
+import ca.owenpeterson.web.api.client.model.ApiDefaultError;
+import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -41,7 +41,7 @@ public class DefaultApiTest {
      *          if the Api call fails
      */
     @Test
-    public void statusGetTest() {
+    public void getServerStatusTest() {
         ApiServerStatusResponse response = api.getServerStatus();
 
         // TODO: test validations
