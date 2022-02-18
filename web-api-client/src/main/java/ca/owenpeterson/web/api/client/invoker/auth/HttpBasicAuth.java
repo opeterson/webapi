@@ -1,6 +1,5 @@
 package ca.owenpeterson.web.api.client.invoker.auth;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
 import org.springframework.http.HttpHeaders;

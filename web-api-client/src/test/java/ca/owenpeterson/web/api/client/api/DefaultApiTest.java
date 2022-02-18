@@ -13,15 +13,9 @@
 
 package ca.owenpeterson.web.api.client.api;
 
-import ca.owenpeterson.web.api.client.model.ApiDefaultError;
 import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
 import org.junit.Test;
 import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for DefaultApi
