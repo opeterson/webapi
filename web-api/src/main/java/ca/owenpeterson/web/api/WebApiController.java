@@ -16,6 +16,4 @@ public class WebApiController implements WebApi {
 		// TODO Auto-generated method stub
 		return WebApi.super.getServerStatus();
 	}
-
-
 }
