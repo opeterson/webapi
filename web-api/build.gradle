@@ -52,7 +52,7 @@ ext {
     spring_version = "5.3.16"
     spring_data_version = "2.6.2"
     junit_version = "4.13.1"
-    slf4j_version = "1.7.36"
+    log4j_version = "2.17.1"
     javax_version = "4.0.1"
 }
 
@@ -79,8 +79,9 @@ dependencies {
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version"
     implementation "jakarta.annotation:jakarta.annotation-api:$jakarta_annotation_version"
     implementation "jakarta.validation:jakarta.validation-api:$jakarta_validation_version"
-    implementation "jakarta.xml.bind:jakarta.xml.bind-api:$jakarta_xml_bind_version"
-    implementation "org.slf4j:slf4j-log4j12:$slf4j_version"		
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:$jakarta_xml_bind_version"	
+    implementation "org.apache.logging.log4j:log4j-core:$log4j_version"
+    	
     
     compileOnly "javax.servlet:javax.servlet-api:$javax_version"   
     testImplementation "junit:junit:$junit_version"     
