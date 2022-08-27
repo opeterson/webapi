@@ -15,7 +15,10 @@
     </Async>
   </Appenders>
   <Loggers>
-    <Root level="error">
+  	<Logger name="ca.owenpeterson" level="debug" additivity="false">
+  		<AppenderRef ref="LogFile" />
+  	</Logger>
+    <Root level="debug">
       <AppenderRef ref="Console"/>
     </Root>
   </Loggers>
