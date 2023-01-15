@@ -1,5 +1,21 @@
 package ca.owenpeterson.web.api;
 
+import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
+import org.junit.Test;
+import org.springframework.http.ResponseEntity;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 public class WebApiControllerTest {
-	//TODO: Write tests
+
+    private WebApiController controller = new WebApiController();
+	@Test
+    public void testGetServerStatus()
+    {
+        ResponseEntity<ApiServerStatusResponse> responseEntity = controller.getServerStatus();
+        ApiServerStatusResponse response = responseEntity.getBody();
+        assertNotNull(response);
+        assertEquals("MOCKED", response.getDbStatus());
+    }
 }
