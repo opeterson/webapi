@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
 <Configuration status="WARN">
+  <Properties>
+    <Property name="spring.level">INFO</Property>
+    <Property name="owenpeterson.level">DEBUG</Property>
+    <Property name="springfox.level">INFO</Property>
+  </Properties>
   <Appenders>
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </Console>
   </Appenders>
   <Loggers>
+    <Logger name="ca.owenpeterson" level="${owenpeterson.level}" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="org.springframework" level="${spring.level}" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="springfox" level="${springfox.level}" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
     <Root level="debug">
       <AppenderRef ref="Console"/>
     </Root>
