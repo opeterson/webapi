@@ -1,0 +1,11 @@
+services:
+  web-api:
+    container_name: web-api-container
+    build:
+        context: ../../
+        dockerfile: ./src/docker/Dockerfile
+        args:
+          - "WAR_FILE=build/libs/web-api.war"
+    image: owenpeterson/web-api
+    ports:
+      - "8080:8080"
