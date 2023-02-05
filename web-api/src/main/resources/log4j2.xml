@@ -20,6 +20,9 @@
     <Logger name="springfox" level="${springfox.level}" additivity="false">
       <AppenderRef ref="Console" />
     </Logger>
+    <Logger name="org.hibernate" level="DEBUG" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
     <Root level="debug">
       <AppenderRef ref="Console"/>
     </Root>

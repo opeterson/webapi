@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   web-api:
     container_name: web-api-container
@@ -9,10 +11,12 @@ services:
     image: owenpeterson/web-api
     ports:
       - "8080:8080"
+    depends_on:
+      - "mysql-db"
 
   mysql-db:
       container_name: mysql-container
-      image: mysql:latest
+      image: mysql:8.0
       restart: always
       environment:
         MYSQL_DATABASE: "web-api-database"
