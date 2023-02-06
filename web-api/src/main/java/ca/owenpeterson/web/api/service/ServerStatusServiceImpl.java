@@ -2,7 +2,6 @@ package ca.owenpeterson.web.api.service;
 
 import ca.owenpeterson.web.api.dao.ServerStatusDao;
 import ca.owenpeterson.web.api.domain.ServerStatus;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

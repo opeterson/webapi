@@ -1,5 +1,6 @@
 package ca.owenpeterson.web.api.domain;
 
+
 import jakarta.persistence.*;
 
 @Entity

@@ -2,6 +2,7 @@ package ca.owenpeterson.web.api.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,8 @@ public class HibernateDao {
     public void save(Object object)
     {
         Session session = getSession();
+        Transaction transaction = session.beginTransaction();
         session.persist(object);
+        transaction.commit();
     }
 }

@@ -1,5 +1,6 @@
 package ca.owenpeterson.web.api.config.spring;
 
+import ca.owenpeterson.web.api.domain.ServerStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.SessionFactory;
@@ -30,6 +31,7 @@ public class HibernateSessionConfig {
     private static final String C3P0_MAX_SIZE = "20";
     private static final String C3P0_ACQUIRE_INCREMENT = "5";
     private static final String C3P0_TIMEOUT = "1800";
+    private static final String HBM2DDL_AUTO = "create";
 
     @Bean
     public SessionFactory sessionFactory()
@@ -48,12 +50,15 @@ public class HibernateSessionConfig {
         settings.put("hibernate.c3p0.max_size", C3P0_MAX_SIZE);
         settings.put("hibernate.c3p0.acquire_increment", C3P0_ACQUIRE_INCREMENT);
         settings.put("hibernate.c3p0.timeout", C3P0_TIMEOUT);
+        settings.put("hibernate.hbm2ddl.auto", HBM2DDL_AUTO);
 
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(settings).build();
 
         MetadataSources metadataSources = new MetadataSources(serviceRegistry);
-        //metadataSources.addAnnotatedClass(Player.class);
+        metadataSources.addAnnotatedClass(ServerStatus.class);
+        //TODO: try to get it scanning a whole dao package.
+        //metadataSources.addPackage("ca.owenpeterson.web.api.domain.*");
         Metadata metadata = metadataSources.buildMetadata();
 
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
