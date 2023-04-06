@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 import org.springframework.context.annotation.Bean;
@@ -57,9 +58,9 @@ public class HibernateSessionConfig {
 
         MetadataSources metadataSources = new MetadataSources(serviceRegistry);
         metadataSources.addAnnotatedClass(ServerStatus.class);
-        //TODO: try to get it scanning a whole dao package.
-        //metadataSources.addPackage("ca.owenpeterson.web.api.domain.*");
-        Metadata metadata = metadataSources.buildMetadata();
+        Metadata metadata = metadataSources.getMetadataBuilder()
+                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
+                .build();
 
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         LOGGER.info("Successfully created SessionFactory bean");
