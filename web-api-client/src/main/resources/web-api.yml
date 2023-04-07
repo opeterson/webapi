@@ -37,6 +37,9 @@ components:
       properties:
         db_status:
           type: string
+        db_start_time:
+          type: string
+          format: date-time
     ApiDefaultError:
       type: object
       properties:

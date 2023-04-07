@@ -14,23 +14,33 @@
 package ca.owenpeterson.web.api.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * ApiServerStatusResponse
  */
 @JsonPropertyOrder({
-  ApiServerStatusResponse.JSON_PROPERTY_DB_STATUS
+  ApiServerStatusResponse.JSON_PROPERTY_DB_STATUS,
+  ApiServerStatusResponse.JSON_PROPERTY_DB_START_TIME
 })
 @JsonTypeName("ApiServerStatusResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-02-13T13:50:44.533356500-06:00[America/Chicago]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-07T11:22:24.941660600-05:00[America/Chicago]")
 public class ApiServerStatusResponse {
   public static final String JSON_PROPERTY_DB_STATUS = "db_status";
   private String dbStatus;
+
+  public static final String JSON_PROPERTY_DB_START_TIME = "db_start_time";
+  private OffsetDateTime dbStartTime;
 
   public ApiServerStatusResponse() { 
   }
@@ -62,6 +72,33 @@ public class ApiServerStatusResponse {
   }
 
 
+  public ApiServerStatusResponse dbStartTime(OffsetDateTime dbStartTime) {
+    
+    this.dbStartTime = dbStartTime;
+    return this;
+  }
+
+   /**
+   * Get dbStartTime
+   * @return dbStartTime
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_DB_START_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public OffsetDateTime getDbStartTime() {
+    return dbStartTime;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DB_START_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDbStartTime(OffsetDateTime dbStartTime) {
+    this.dbStartTime = dbStartTime;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -71,12 +108,13 @@ public class ApiServerStatusResponse {
       return false;
     }
     ApiServerStatusResponse apiServerStatusResponse = (ApiServerStatusResponse) o;
-    return Objects.equals(this.dbStatus, apiServerStatusResponse.dbStatus);
+    return Objects.equals(this.dbStatus, apiServerStatusResponse.dbStatus) &&
+        Objects.equals(this.dbStartTime, apiServerStatusResponse.dbStartTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dbStatus);
+    return Objects.hash(dbStatus, dbStartTime);
   }
 
   @Override
@@ -84,6 +122,7 @@ public class ApiServerStatusResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiServerStatusResponse {\n");
     sb.append("    dbStatus: ").append(toIndentedString(dbStatus)).append("\n");
+    sb.append("    dbStartTime: ").append(toIndentedString(dbStartTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

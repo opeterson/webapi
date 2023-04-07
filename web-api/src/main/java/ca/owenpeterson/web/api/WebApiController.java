@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-18T06:47:31.065312200-06:00[America/Chicago]")
 @Controller
 @RequestMapping("${openapi.owenpetersonCa.base-path:/}")
@@ -31,16 +36,18 @@ public class WebApiController implements WebApi {
 
 		ServerStatus serverStatus = new ServerStatus();
 		serverStatus.setStatus("ONLINE");
+		serverStatus.setStartUpTime(LocalDateTime.now());
 		serverStatusService.saveServerStatus(serverStatus);
 
 		ServerStatus savedServerStatus = serverStatusService.getServerStatusById(1);
 
-		if (null != savedServerStatus)
-		{
+		//TODO: write transformer for this.
+		if (null != savedServerStatus) {
 			response.setDbStatus(serverStatus.getStatus());
-		}
-		else
-		{
+			//TODO: make a util class for time conversions
+			ZoneId winnipeg = ZoneId.of("America/Winnipeg").getRules().getOffset(Instant.now());
+			response.setDbStartTime(serverStatus.getStartUpTime().atOffset(ZoneOffset.of(winnipeg.getId())));
+		} else {
 			response.setDbStatus("ERROR_STATE");
 		}
 

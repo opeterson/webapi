@@ -26,4 +26,3 @@ src/main/java/ca/owenpeterson/web/api/client/invoker/auth/HttpBasicAuth.java
 src/main/java/ca/owenpeterson/web/api/client/invoker/auth/HttpBearerAuth.java
 src/main/java/ca/owenpeterson/web/api/client/model/ApiDefaultError.java
 src/main/java/ca/owenpeterson/web/api/client/model/ApiServerStatusResponse.java
-src/test/java/ca/owenpeterson/web/api/client/api/DefaultApiTest.java

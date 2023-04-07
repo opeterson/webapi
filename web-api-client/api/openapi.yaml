@@ -35,9 +35,13 @@ components:
   schemas:
     ApiServerStatusResponse:
       example:
+        db_start_time: 2000-01-23T04:56:07.000+00:00
         db_status: db_status
       properties:
         db_status:
+          type: string
+        db_start_time:
+          format: date-time
           type: string
       type: object
     ApiDefaultError:
