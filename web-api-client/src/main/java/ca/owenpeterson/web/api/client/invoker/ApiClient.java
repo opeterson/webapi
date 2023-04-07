@@ -57,7 +57,7 @@ import java.time.OffsetDateTime;
 
 import ca.owenpeterson.web.api.client.invoker.auth.Authentication;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-07T11:22:24.941660600-05:00[America/Chicago]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @Component("ca.owenpeterson.web.api.client.invoker.ApiClient")
 public class ApiClient extends JavaTimeFormatter {
     public enum CollectionFormat {

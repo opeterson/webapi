@@ -103,7 +103,7 @@ openApiValidate {
 	    recommend = true
 	}
 
-openApiGenerate {
+task openApiGenerateClient(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask){
     generatorName = 'java'
     library = 'resttemplate'
     inputSpec = projectDir.toString() + '/src/main/resources/web-api.yml'.toString()
@@ -112,11 +112,40 @@ openApiGenerate {
     invokerPackage = 'ca.owenpeterson.web.api.client.invoker'
     modelPackage = 'ca.owenpeterson.web.api.client.model'
     configOptions = [
-        dateLibrary: 'java8',
-        serializationLibrary: 'jackson',
-        generateModelTests: 'false',
-        generateApiTests: 'false'
+            dateLibrary: 'java8',
+            serializationLibrary: 'jackson',
+            generateModelTests: 'false',
+            generateApiTests: 'false',
+            hideGenerationTimestamp: 'true'
     ]
+}
+
+configure(openApiGenerateClient) {
+    group= 'OpenAPI Tools'
+    description = 'Custom task to generate the client for the web-api project.'
+}
+
+task openApiGenerateServer(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask){
+    generatorName = 'spring'
+    library = 'spring-mvc'
+    inputSpec = projectDir.toString() + '/src/main/resources/web-api.yml'.toString()
+    outputDir = projectDir.toString() + '/build/generated/web-api-server/'.toString()
+    apiPackage = 'ca.owenpeterson.web.api.client.api'
+    invokerPackage = 'ca.owenpeterson.web.api.client.invoker'
+    modelPackage = 'ca.owenpeterson.web.api.client.model'
+    configOptions = [
+            dateLibrary: 'java8',
+            serializationLibrary: 'jackson',
+            generateModelTests: 'false',
+            generateApiTests: 'false',
+            skipDefaultInterface: 'true',
+            hideGenerationTimestamp: 'true'
+    ]
+}
+
+configure(openApiGenerateServer) {
+    group= 'OpenAPI Tools'
+    description = 'Custom task to generate the server for the web-api project.'
 }
 
 ext {

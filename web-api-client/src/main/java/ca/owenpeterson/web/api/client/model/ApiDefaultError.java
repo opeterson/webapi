@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiDefaultError.JSON_PROPERTY_ERROR_MESSAGE
 })
 @JsonTypeName("ApiDefaultError")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-07T11:22:24.941660600-05:00[America/Chicago]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiDefaultError {
   public static final String JSON_PROPERTY_ERROR_MESSAGE = "error_message";
   private String errorMessage;

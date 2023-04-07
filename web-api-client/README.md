@@ -4,8 +4,6 @@ owenpeterson.ca
 
 - API version: 1.0.0
 
-- Build date: 2023-04-07T11:22:24.941660600-05:00[America/Chicago]
-
 This is the server for my personal website.
 
 

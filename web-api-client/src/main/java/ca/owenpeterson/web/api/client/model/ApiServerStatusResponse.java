@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiServerStatusResponse.JSON_PROPERTY_DB_START_TIME
 })
 @JsonTypeName("ApiServerStatusResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-07T11:22:24.941660600-05:00[America/Chicago]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiServerStatusResponse {
   public static final String JSON_PROPERTY_DB_STATUS = "db_status";
   private String dbStatus;
