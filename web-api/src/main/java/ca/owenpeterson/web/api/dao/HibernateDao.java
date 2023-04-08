@@ -24,4 +24,12 @@ public class HibernateDao {
         session.persist(object);
         transaction.commit();
     }
+
+    public void update(Object object)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(object);
+        transaction.commit();
+    }
 }
