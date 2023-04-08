@@ -118,6 +118,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [ApiDefaultError](docs/ApiDefaultError.md)
+ - [ApiServerStatus](docs/ApiServerStatus.md)
  - [ApiServerStatusResponse](docs/ApiServerStatusResponse.md)
 
 

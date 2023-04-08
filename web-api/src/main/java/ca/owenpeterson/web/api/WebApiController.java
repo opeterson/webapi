@@ -1,8 +1,8 @@
 package ca.owenpeterson.web.api;
 
-import ca.owenpeterson.web.api.domain.ServerStatus;
-import ca.owenpeterson.web.api.service.ServerStatusServiceImpl;
-import net.bytebuddy.implementation.auxiliary.AuxiliaryType;
+import ca.owenpeterson.web.api.client.model.ApiDefaultError;
+import ca.owenpeterson.web.api.client.model.ApiServerStatus;
+import ca.owenpeterson.web.api.service.ApiServerStatusServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import ca.owenpeterson.web.api.client.model.ApiServerStatusResponse;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-02-18T06:47:31.065312200-06:00[America/Chicago]")
 @Controller
 @RequestMapping("${openapi.owenpetersonCa.base-path:/}")
@@ -26,29 +21,21 @@ public class WebApiController implements WebApi {
 	private static final Logger LOGGER = LogManager.getLogger(WebApiController.class);
 
 	@Autowired
-	private ServerStatusServiceImpl serverStatusService;
+	private ApiServerStatusServiceImpl serverStatusService;
 
 	@Override
 	public ResponseEntity<ApiServerStatusResponse> getServerStatus() {
 
 		LOGGER.debug("Fetching server status.");
 		ApiServerStatusResponse response = new ApiServerStatusResponse();
+		ApiServerStatus savedServerStatus = serverStatusService.getServerStatusById(1);
 
-		ServerStatus serverStatus = new ServerStatus();
-		serverStatus.setStatus("ONLINE");
-		serverStatus.setStartUpTime(LocalDateTime.now());
-		serverStatusService.saveServerStatus(serverStatus);
-
-		ServerStatus savedServerStatus = serverStatusService.getServerStatusById(1);
-
-		//TODO: write transformer for this.
 		if (null != savedServerStatus) {
-			response.setDbStatus(serverStatus.getStatus());
-			//TODO: make a util class for time conversions
-			ZoneId winnipeg = ZoneId.of("America/Winnipeg").getRules().getOffset(Instant.now());
-			response.setDbStartTime(serverStatus.getStartUpTime().atOffset(ZoneOffset.of(winnipeg.getId())));
+			response.setServerStatus(savedServerStatus);
 		} else {
-			response.setDbStatus("ERROR_STATE");
+			ApiDefaultError error = new ApiDefaultError();
+			error.setErrorMessage("Unable to determine server status.");
+			response.setError(error);
 		}
 
 		return new ResponseEntity<>(response, HttpStatus.OK);

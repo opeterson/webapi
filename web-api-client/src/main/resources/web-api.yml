@@ -35,13 +35,22 @@ components:
     ApiServerStatusResponse:
       type: object
       properties:
-        db_status:
+        serverStatus:
+          $ref: "#/components/schemas/ApiServerStatus"
+        error:
+         $ref: "#/components/schemas/ApiDefaultError"
+    ApiServerStatus:
+      type: object
+      properties:
+        databaseStatus:
           type: string
-        db_start_time:
+        databaseStartTime:
           type: string
           format: date-time
     ApiDefaultError:
       type: object
       properties:
-        error_message:
+        errorMessage:
+          type: string
+        errorCode:
           type: string

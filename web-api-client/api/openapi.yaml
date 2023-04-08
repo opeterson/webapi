@@ -35,18 +35,37 @@ components:
   schemas:
     ApiServerStatusResponse:
       example:
-        db_start_time: 2000-01-23T04:56:07.000+00:00
-        db_status: db_status
+        serverStatus:
+          databaseStatus: databaseStatus
+          databaseStartTime: 2000-01-23T04:56:07.000+00:00
+        error:
+          errorMessage: errorMessage
+          errorCode: errorCode
       properties:
-        db_status:
+        serverStatus:
+          $ref: '#/components/schemas/ApiServerStatus'
+        error:
+          $ref: '#/components/schemas/ApiDefaultError'
+      type: object
+    ApiServerStatus:
+      example:
+        databaseStatus: databaseStatus
+        databaseStartTime: 2000-01-23T04:56:07.000+00:00
+      properties:
+        databaseStatus:
           type: string
-        db_start_time:
+        databaseStartTime:
           format: date-time
           type: string
       type: object
     ApiDefaultError:
+      example:
+        errorMessage: errorMessage
+        errorCode: errorCode
       properties:
-        error_message:
+        errorMessage:
+          type: string
+        errorCode:
           type: string
       type: object
 

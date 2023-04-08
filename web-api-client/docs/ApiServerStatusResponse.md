@@ -7,8 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dbStatus** | **String** |  |  [optional]
-**dbStartTime** | **OffsetDateTime** |  |  [optional]
+**serverStatus** | [**ApiServerStatus**](ApiServerStatus.md) |  |  [optional]
+**error** | [**ApiDefaultError**](ApiDefaultError.md) |  |  [optional]
 
 
 

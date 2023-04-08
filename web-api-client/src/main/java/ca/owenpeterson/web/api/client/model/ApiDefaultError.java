@@ -14,28 +14,27 @@
 package ca.owenpeterson.web.api.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * ApiDefaultError
  */
 @JsonPropertyOrder({
-  ApiDefaultError.JSON_PROPERTY_ERROR_MESSAGE
+  ApiDefaultError.JSON_PROPERTY_ERROR_MESSAGE,
+  ApiDefaultError.JSON_PROPERTY_ERROR_CODE
 })
 @JsonTypeName("ApiDefaultError")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiDefaultError {
-  public static final String JSON_PROPERTY_ERROR_MESSAGE = "error_message";
+  public static final String JSON_PROPERTY_ERROR_MESSAGE = "errorMessage";
   private String errorMessage;
+
+  public static final String JSON_PROPERTY_ERROR_CODE = "errorCode";
+  private String errorCode;
 
   public ApiDefaultError() { 
   }
@@ -67,6 +66,33 @@ public class ApiDefaultError {
   }
 
 
+  public ApiDefaultError errorCode(String errorCode) {
+    
+    this.errorCode = errorCode;
+    return this;
+  }
+
+   /**
+   * Get errorCode
+   * @return errorCode
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  @JsonProperty(JSON_PROPERTY_ERROR_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getErrorCode() {
+    return errorCode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ERROR_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setErrorCode(String errorCode) {
+    this.errorCode = errorCode;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -76,12 +102,13 @@ public class ApiDefaultError {
       return false;
     }
     ApiDefaultError apiDefaultError = (ApiDefaultError) o;
-    return Objects.equals(this.errorMessage, apiDefaultError.errorMessage);
+    return Objects.equals(this.errorMessage, apiDefaultError.errorMessage) &&
+        Objects.equals(this.errorCode, apiDefaultError.errorCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errorMessage);
+    return Objects.hash(errorMessage, errorCode);
   }
 
   @Override
@@ -89,6 +116,7 @@ public class ApiDefaultError {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiDefaultError {\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

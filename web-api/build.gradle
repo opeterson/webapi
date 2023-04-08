@@ -92,7 +92,9 @@ dependencies {
     implementation "org.hibernate.orm:hibernate-core:$hibernate_version"
     implementation "org.hibernate:hibernate-c3p0:$hibernate_version"
     implementation "mysql:mysql-connector-java:8.0.32"
-    
+    implementation "org.apache.commons:commons-collections4:4.4"
+
+
     compileOnly "javax.servlet:javax.servlet-api:$javax_version"   
     testImplementation "junit:junit:$junit_version"     
 }

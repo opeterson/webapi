@@ -14,88 +14,82 @@
 package ca.owenpeterson.web.api.client.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * ApiServerStatusResponse
  */
 @JsonPropertyOrder({
-  ApiServerStatusResponse.JSON_PROPERTY_DB_STATUS,
-  ApiServerStatusResponse.JSON_PROPERTY_DB_START_TIME
+  ApiServerStatusResponse.JSON_PROPERTY_SERVER_STATUS,
+  ApiServerStatusResponse.JSON_PROPERTY_ERROR
 })
 @JsonTypeName("ApiServerStatusResponse")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiServerStatusResponse {
-  public static final String JSON_PROPERTY_DB_STATUS = "db_status";
-  private String dbStatus;
+  public static final String JSON_PROPERTY_SERVER_STATUS = "serverStatus";
+  private ApiServerStatus serverStatus;
 
-  public static final String JSON_PROPERTY_DB_START_TIME = "db_start_time";
-  private OffsetDateTime dbStartTime;
+  public static final String JSON_PROPERTY_ERROR = "error";
+  private ApiDefaultError error;
 
   public ApiServerStatusResponse() { 
   }
 
-  public ApiServerStatusResponse dbStatus(String dbStatus) {
+  public ApiServerStatusResponse serverStatus(ApiServerStatus serverStatus) {
     
-    this.dbStatus = dbStatus;
+    this.serverStatus = serverStatus;
     return this;
   }
 
    /**
-   * Get dbStatus
-   * @return dbStatus
+   * Get serverStatus
+   * @return serverStatus
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DB_STATUS)
+  @JsonProperty(JSON_PROPERTY_SERVER_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDbStatus() {
-    return dbStatus;
+  public ApiServerStatus getServerStatus() {
+    return serverStatus;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DB_STATUS)
+  @JsonProperty(JSON_PROPERTY_SERVER_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDbStatus(String dbStatus) {
-    this.dbStatus = dbStatus;
+  public void setServerStatus(ApiServerStatus serverStatus) {
+    this.serverStatus = serverStatus;
   }
 
 
-  public ApiServerStatusResponse dbStartTime(OffsetDateTime dbStartTime) {
+  public ApiServerStatusResponse error(ApiDefaultError error) {
     
-    this.dbStartTime = dbStartTime;
+    this.error = error;
     return this;
   }
 
    /**
-   * Get dbStartTime
-   * @return dbStartTime
+   * Get error
+   * @return error
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  @JsonProperty(JSON_PROPERTY_DB_START_TIME)
+  @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public OffsetDateTime getDbStartTime() {
-    return dbStartTime;
+  public ApiDefaultError getError() {
+    return error;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DB_START_TIME)
+  @JsonProperty(JSON_PROPERTY_ERROR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDbStartTime(OffsetDateTime dbStartTime) {
-    this.dbStartTime = dbStartTime;
+  public void setError(ApiDefaultError error) {
+    this.error = error;
   }
 
 
@@ -108,21 +102,21 @@ public class ApiServerStatusResponse {
       return false;
     }
     ApiServerStatusResponse apiServerStatusResponse = (ApiServerStatusResponse) o;
-    return Objects.equals(this.dbStatus, apiServerStatusResponse.dbStatus) &&
-        Objects.equals(this.dbStartTime, apiServerStatusResponse.dbStartTime);
+    return Objects.equals(this.serverStatus, apiServerStatusResponse.serverStatus) &&
+        Objects.equals(this.error, apiServerStatusResponse.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dbStatus, dbStartTime);
+    return Objects.hash(serverStatus, error);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiServerStatusResponse {\n");
-    sb.append("    dbStatus: ").append(toIndentedString(dbStatus)).append("\n");
-    sb.append("    dbStartTime: ").append(toIndentedString(dbStartTime)).append("\n");
+    sb.append("    serverStatus: ").append(toIndentedString(serverStatus)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }

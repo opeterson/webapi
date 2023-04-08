@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 build.sbt
 docs/ApiDefaultError.md
+docs/ApiServerStatus.md
 docs/ApiServerStatusResponse.md
 docs/DefaultApi.md
 git_push.sh
@@ -25,4 +26,5 @@ src/main/java/ca/owenpeterson/web/api/client/invoker/auth/Authentication.java
 src/main/java/ca/owenpeterson/web/api/client/invoker/auth/HttpBasicAuth.java
 src/main/java/ca/owenpeterson/web/api/client/invoker/auth/HttpBearerAuth.java
 src/main/java/ca/owenpeterson/web/api/client/model/ApiDefaultError.java
+src/main/java/ca/owenpeterson/web/api/client/model/ApiServerStatus.java
 src/main/java/ca/owenpeterson/web/api/client/model/ApiServerStatusResponse.java
