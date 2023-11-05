@@ -32,4 +32,13 @@ public class HibernateDao {
         session.merge(object);
         transaction.commit();
     }
+
+    public <T> T getById(Class<T> entityClass, int id)
+    {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        T result = (T) session.get(entityClass, id);
+        transaction.commit();
+        return result;
+    }
 }
