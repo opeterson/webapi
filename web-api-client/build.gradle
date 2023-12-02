@@ -111,11 +111,11 @@ task openApiGenerateClient(type: org.openapitools.generator.gradle.plugin.tasks.
     apiPackage = 'ca.owenpeterson.web.api.client.api'
     invokerPackage = 'ca.owenpeterson.web.api.client.invoker'
     modelPackage = 'ca.owenpeterson.web.api.client.model'
+    generateModelTests = false
+    generateApiTests = false
     configOptions = [
             dateLibrary: 'java8',
             serializationLibrary: 'jackson',
-            generateModelTests: 'false',
-            generateApiTests: 'false',
             hideGenerationTimestamp: 'true'
     ]
 }
@@ -133,11 +133,11 @@ task openApiGenerateServer(type: org.openapitools.generator.gradle.plugin.tasks.
     apiPackage = 'ca.owenpeterson.web.api.client.api'
     invokerPackage = 'ca.owenpeterson.web.api.client.invoker'
     modelPackage = 'ca.owenpeterson.web.api.client.model'
+    generateModelTests = false
+    generateApiTests = false
     configOptions = [
             dateLibrary: 'java8',
             serializationLibrary: 'jackson',
-            generateModelTests: 'false',
-            generateApiTests: 'false',
             skipDefaultInterface: 'true',
             hideGenerationTimestamp: 'true'
     ]
